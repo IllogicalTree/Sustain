@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sustain/login.dart';
 import 'package:sustain/products.dart';
+import 'package:sustain/profile.dart';
 import 'package:sustain/register.dart';
 
 void main() {
@@ -16,13 +17,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: Products(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => Register(),
         '/login': (context) => Login(),
         '/register': (context) => Register(),
-        '/products': (context) => Products()
+        '/products': (context) => Products(),
+        '/profile': (context) => Profile()
       },
     );
   }
