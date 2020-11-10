@@ -32,7 +32,7 @@ class Login extends StatelessWidget {
               'LOGIN',
               style: TextStyle(color: Colors.white, fontSize: 50),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -90,14 +90,17 @@ class Login extends StatelessWidget {
                     Navigator.pushReplacementNamed(context, '/products'),
               ),
             ),
-            SizedBox(height: 20),
             Container(
-              child: Text(
-                'Create an Account',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+              child: FlatButton(
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, '/register'),
+                child: Text(
+                  'Create an Account',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
               ),
             ),
