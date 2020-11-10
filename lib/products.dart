@@ -14,16 +14,14 @@ class Products extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            Container(
-              height: 250,
-              child: Container(
-                width: 250,
-                child: Image.asset('assets/tree-planting-icon.png'),
-              ),
-            ),
             MaterialButton(
               child: Text('Go back to Register'),
               onPressed: () => Navigator.pushReplacementNamed(context, '/'),
+            ),
+            MaterialButton(
+              child: Text('Go to profile'),
+              onPressed: () =>
+                  Navigator.pushReplacementNamed(context, '/profile'),
             ),
             SizedBox(height: 50),
             cardTitle('Popular Purchases'),
