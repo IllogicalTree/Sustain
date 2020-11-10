@@ -30,7 +30,11 @@ class Login extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               'LOGIN',
-              style: TextStyle(color: Colors.white, fontSize: 50),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 30),
             Container(

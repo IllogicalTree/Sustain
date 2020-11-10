@@ -30,7 +30,11 @@ class Register extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               'REGISTER',
-              style: TextStyle(color: Colors.white, fontSize: 50),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 20),
             Container(
