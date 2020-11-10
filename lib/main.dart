@@ -27,7 +27,11 @@ class Products extends StatelessWidget {
           SizedBox(height: 100),
           Container(
             height: 250,
-            child: Container(color: Colors.red),
+            child: Container(
+              width: 250,
+              color: Colors.red,
+              child: Image.asset('assets/tree-planting-icon.png'),
+            ),
           ),
           SizedBox(height: 50),
           Align(
