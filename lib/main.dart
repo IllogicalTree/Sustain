@@ -35,118 +35,13 @@ class Products extends StatelessWidget {
           ),
           SizedBox(height: 50),
           cardTitle('Popular Purchases'),
-          Container(
-            height: 100,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                card(
-                  'FAIRTRADE APPLE',
-                  'Ethically Sourced from Fairtrade Farmrs',
-                  'A',
-                  0xFFBB4E5E,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'ORGANIC KEFIR',
-                  'Uses recycled packaging and made using Fairtrade milk',
-                  'B',
-                  0xFFBB8B53,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'RAISIN LOAF',
-                  'Gluten Free and packaged in recyled plastic',
-                  'B',
-                  0xFF7A4C81,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'CHOCOLATE BITES',
-                  'Uses cardboard package that is not recylable',
-                  'E',
-                  0xFFCD6954,
-                  'assets/tree-planting-icon.png',
-                ),
-              ],
-            ),
-          ),
+          cardRow(),
           SizedBox(height: 25),
           cardTitle('Recently Purchased'),
-          Container(
-            height: 100,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                card(
-                  'FAIRTRADE APPLE',
-                  'Ethically Sourced from Fairtrade Farmrs',
-                  'A',
-                  0xFFBB4E5E,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'ORGANIC KEFIR',
-                  'Uses recycled packaging and made using Fairtrade milk',
-                  'B',
-                  0xFFBB8B53,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'RAISIN LOAF',
-                  'Gluten Free and packaged in recyled plastic',
-                  'B',
-                  0xFF7A4C81,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'CHOCOLATE BITES',
-                  'Uses cardboard package that is not recylable',
-                  'E',
-                  0xFFCD6954,
-                  'assets/tree-planting-icon.png',
-                ),
-              ],
-            ),
-          ),
+          cardRow(),
           SizedBox(height: 25),
           cardTitle('Articles'),
-          Container(
-            height: 100,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                card(
-                  'FAIRTRADE APPLE',
-                  'Ethically Sourced from Fairtrade Farmrs',
-                  'A',
-                  0xFFBB4E5E,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'ORGANIC KEFIR',
-                  'Uses recycled packaging and made using Fairtrade milk',
-                  'B',
-                  0xFFBB8B53,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'RAISIN LOAF',
-                  'Gluten Free and packaged in recyled plastic',
-                  'B',
-                  0xFF7A4C81,
-                  'assets/tree-planting-icon.png',
-                ),
-                card(
-                  'CHOCOLATE BITES',
-                  'Uses cardboard package that is not recylable',
-                  'E',
-                  0xFFCD6954,
-                  'assets/tree-planting-icon.png',
-                ),
-              ],
-            ),
-          ),
+          cardRow(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -178,6 +73,45 @@ class Products extends StatelessWidget {
           fontSize: 16,
           fontWeight: FontWeight.bold,
         ),
+      ),
+    );
+  }
+
+  cardRow() {
+    return Container(
+      height: 100,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          card(
+            'FAIRTRADE APPLE',
+            'Ethically Sourced from Fairtrade Farmrs',
+            'A',
+            0xFFBB4E5E,
+            'assets/tree-planting-icon.png',
+          ),
+          card(
+            'ORGANIC KEFIR',
+            'Uses recycled packaging and made using Fairtrade milk',
+            'B',
+            0xFFBB8B53,
+            'assets/tree-planting-icon.png',
+          ),
+          card(
+            'RAISIN LOAF',
+            'Gluten Free and packaged in recyled plastic',
+            'B',
+            0xFF7A4C81,
+            'assets/tree-planting-icon.png',
+          ),
+          card(
+            'CHOCOLATE BITES',
+            'Uses cardboard package that is not recylable',
+            'E',
+            0xFFCD6954,
+            'assets/tree-planting-icon.png',
+          ),
+        ],
       ),
     );
   }
