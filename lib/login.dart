@@ -15,14 +15,102 @@ class Login extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Login Page'),
-            MaterialButton(
-              child: Center(
-                child: Text('Go to Products Page'),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              height: 60,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/logo.png'),
+                  fit: BoxFit.fitHeight,
+                ),
               ),
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, '/products'),
-            )
+            ),
+            SizedBox(height: 20),
+            Text(
+              'LOGIN',
+              style: TextStyle(color: Colors.white, fontSize: 50),
+            ),
+            SizedBox(height: 40),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
+              ),
+              height: 40,
+              width: 200,
+              child: Padding(
+                padding: const EdgeInsets.all(5),
+                child: Row(
+                  children: [
+                    Icon(Icons.person, color: Colors.lightGreen),
+                    Text('Username'),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
+              ),
+              height: 40,
+              width: 200,
+              child: Padding(
+                padding: const EdgeInsets.all(5),
+                child: Row(
+                  children: [
+                    Icon(Icons.lock, color: Colors.lightGreen),
+                    Text('Password'),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 40,
+              width: 100,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
+              ),
+              child: MaterialButton(
+                child: Center(
+                  child: Text('START!'),
+                ),
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, '/products'),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              child: Text(
+                'Create an Account',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            Spacer(),
+            Container(
+              height: 294,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/login-image.png'),
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ),
           ],
         ),
       ),
