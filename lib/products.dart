@@ -4,29 +4,42 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          SizedBox(height: 100),
-          Container(
-            height: 250,
-            child: Container(
-              width: 250,
-              child: Image.asset('assets/tree-planting-icon.png'),
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFFBEDB72), Color(0xFF3AE388)],
           ),
-          SizedBox(height: 50),
-          cardTitle('Popular Purchases'),
-          cardRow(),
-          SizedBox(height: 25),
-          cardTitle('Recently Purchased'),
-          cardRow(),
-          SizedBox(height: 25),
-          cardTitle('Articles'),
-          cardRow(),
-          MaterialButton(
-            onPressed: () => Navigator.pushReplacementNamed(context, '/login'),
-          )
-        ],
+        ),
+        child: ListView(
+          children: [
+            Container(
+              height: 250,
+              child: Container(
+                width: 250,
+                child: Image.asset('assets/tree-planting-icon.png'),
+              ),
+            ),
+            MaterialButton(
+              child: Text('Go back to Register'),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/'),
+            ),
+            SizedBox(height: 50),
+            cardTitle('Popular Purchases'),
+            cardRow(),
+            SizedBox(height: 25),
+            cardTitle('Recently Purchased'),
+            cardRow(),
+            SizedBox(height: 25),
+            cardTitle('Articles'),
+            cardRow(),
+            MaterialButton(
+              onPressed: () =>
+                  Navigator.pushReplacementNamed(context, '/login'),
+            )
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -69,7 +82,7 @@ class Products extends StatelessWidget {
         children: <Widget>[
           card(
             'FAIRTRADE APPLE',
-            'Ethically Sourced from Fairtrade Farmrs',
+            'Ethically Sourced from Fairtrade Farmers',
             'A',
             0xFFBB4E5E,
             'assets/tree-planting-icon.png',
