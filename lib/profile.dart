@@ -156,6 +156,10 @@ class Profile extends StatelessWidget {
               onPressed: () =>
                   Navigator.pushReplacementNamed(context, '/products'),
             ),
+            MaterialButton(
+              child: Text('Go to menu'),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/menu'),
+            ),
           ],
         ),
       ),
