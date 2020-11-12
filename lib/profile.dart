@@ -120,110 +120,83 @@ class Profile extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            Container(
-              padding: EdgeInsets.all(8),
-              height: 40,
-              color: Colors.lightGreen,
-              child: Row(
-                children: [
-                  Text(
-                    'RECENT',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Spacer(),
-                  Icon(
-                    Icons.arrow_upward_rounded,
-                    size: 34,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-            ),
+            rowHeading('recent'),
             SizedBox(height: 8),
             Container(
               padding: EdgeInsets.all(8),
-              height: 100,
+              height: 120,
+              width: 100,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(width: 100, height: 100, color: Colors.red),
-                  Container(width: 100, height: 100, color: Colors.blue),
-                  Container(width: 100, height: 100, color: Colors.green),
+                  listItem('cola', 0xFFDC596B),
+                  listItem('coffee', 0xFF78C29E),
+                  listItem('burrito', 0xFFBFE3A4),
                 ],
               ),
             ),
             SizedBox(height: 8),
-            Container(
-              padding: EdgeInsets.all(8),
-              height: 40,
-              color: Colors.lightGreen,
-              child: Row(
-                children: [
-                  Text(
-                    'YESTERDAY',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Spacer(),
-                  Icon(
-                    Icons.arrow_upward_rounded,
-                    size: 34,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-            ),
+            rowHeading('yesterday'),
             SizedBox(height: 8),
             Container(
               height: 100,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(width: 100, height: 100, color: Colors.red),
-                  Container(width: 100, height: 100, color: Colors.blue),
-                  Container(width: 100, height: 100, color: Colors.green),
+                  listItem('wine', 0xFFEE8591),
+                  listItem('pizza', 0xFFFDD6A0),
+                  listItem('boba', 0xFFCDA37F),
                 ],
               ),
             ),
             SizedBox(height: 8),
-            Container(
-              height: 40,
-              color: Colors.lightGreen,
-              child: Row(
-                children: [
-                  Text(
-                    'TUESDAY 10/11/20',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Spacer(),
-                  Icon(
-                    Icons.arrow_upward_rounded,
-                    size: 34,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-            ),
+            rowHeading('tuesday 10/11/20'),
             MaterialButton(
               child: Text('Go to products'),
               onPressed: () =>
                   Navigator.pushReplacementNamed(context, '/products'),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  rowHeading(String title) {
+    return Container(
+      padding: EdgeInsets.all(8),
+      height: 40,
+      color: Color(0xFFB6D96A),
+      child: Row(
+        children: [
+          Text(
+            title.toUpperCase(),
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Spacer(),
+          Icon(
+            Icons.arrow_upward_rounded,
+            size: 34,
+            color: Colors.white,
+          )
+        ],
+      ),
+    );
+  }
+
+  listItem(String asset, int color) {
+    return Container(
+      padding: EdgeInsets.all(5),
+      child: Image.asset('assets/' + asset + '.png'),
+      decoration: BoxDecoration(
+        color: Color(color),
+        borderRadius: BorderRadius.all(
+          Radius.circular(15),
         ),
       ),
     );
