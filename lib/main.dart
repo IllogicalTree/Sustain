@@ -10,6 +10,7 @@ import 'package:sustain/register.dart';
 import 'package:sustain/about.dart';
 import 'package:sustain/search.dart';
 import 'package:sustain/settings.dart';
+import 'package:sustain/story.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => Register(),
+        '/': (context) => Story(),
         '/login': (context) => Login(),
         '/register': (context) => Register(),
         '/profile': (context) => Profile(),
