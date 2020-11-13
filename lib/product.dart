@@ -206,7 +206,8 @@ class _ProductScreenState extends State<ProductScreen> {
                                           Text(
                                             '${getGrade(snapshot.data.score)}',
                                             style: TextStyle(
-                                                color: Color(0xFFDC596B),
+                                                color: Color(int.parse(
+                                                    snapshot.data.color)),
                                                 fontSize: 28,
                                                 fontWeight: FontWeight.bold),
                                           )
