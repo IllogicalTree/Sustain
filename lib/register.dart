@@ -110,14 +110,12 @@ class Register extends StatelessWidget {
                 child: Center(
                   child: Text('REGISTER!'),
                 ),
-                onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/profile'),
+                onPressed: () => Navigator.pushNamed(context, '/profile'),
               ),
             ),
             Container(
               child: FlatButton(
-                onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/login'),
+                onPressed: () => Navigator.pushNamed(context, '/login'),
                 child: Text(
                   'Login Instead',
                   style: TextStyle(
