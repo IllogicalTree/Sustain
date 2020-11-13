@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sustain/product.dart';
 
 class History extends StatelessWidget {
   @override
@@ -52,9 +53,24 @@ class History extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        listItem('cola', 0xFFDC596B, context),
-                        listItem('coffee', 0xFF78C29E, context),
-                        listItem('burrito', 0xFFBFE3A4, context),
+                        listItem(
+                          'cola',
+                          0xFFDC596B,
+                          context,
+                          '5000112630633',
+                        ),
+                        listItem(
+                          'coffee',
+                          0xFF78C29E,
+                          context,
+                          '266890690',
+                        ),
+                        listItem(
+                          'burrito',
+                          0xFFBFE3A4,
+                          context,
+                          '257450902',
+                        ),
                       ],
                     ),
                   ),
@@ -66,9 +82,24 @@ class History extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        listItem('wine', 0xFFEE8591, context),
-                        listItem('pizza', 0xFFFDD6A0, context),
-                        listItem('boba', 0xFFCDA37F, context),
+                        listItem(
+                          'wine',
+                          0xFFEE8591,
+                          context,
+                          '4304493261563',
+                        ),
+                        listItem(
+                          'pizza',
+                          0xFFFDD6A0,
+                          context,
+                          '910000224862',
+                        ),
+                        listItem(
+                          'boba',
+                          0xFFCDA37F,
+                          context,
+                          '1000000984742',
+                        ),
                       ],
                     ),
                   ),
@@ -80,9 +111,24 @@ class History extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        listItem('tea', 0xFFDDB89A, context),
-                        listItem('chocolate', 0xFFDD5C6D, context),
-                        listItem('water', 0xFFC7CDD8, context),
+                        listItem(
+                          'tea',
+                          0xFFDDB89A,
+                          context,
+                          '7017707266',
+                        ),
+                        listItem(
+                          'chocolate',
+                          0xFFDD5C6D,
+                          context,
+                          '622300735999',
+                        ),
+                        listItem(
+                          'water',
+                          0xFFC7CDD8,
+                          context,
+                          '8243040011',
+                        ),
                       ],
                     ),
                   ),
@@ -127,12 +173,17 @@ class History extends StatelessWidget {
     );
   }
 
-  listItem(String asset, int color, BuildContext context) {
+  listItem(String asset, int color, BuildContext context, String id) {
     return Container(
       padding: EdgeInsets.all(5),
       child: InkWell(
-          onTap: () => Navigator.pushNamed(context, '/product'),
-          child: Image.asset('assets/' + asset + '.png')),
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductScreen(id: id),
+            )),
+        child: Image.asset('assets/' + asset + '.png'),
+      ),
       decoration: BoxDecoration(
         color: Color(color),
         borderRadius: BorderRadius.all(
