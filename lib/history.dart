@@ -14,8 +14,7 @@ class History extends StatelessWidget {
           ),
         ),
         child: Column(
-          children: [
-            SizedBox(height: 20),
+          children:  [
             Container(
               height: 58,
               padding: EdgeInsets.only(left: 20, right: 20, top: 20),
