@@ -221,31 +221,11 @@ class Profile extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  listItem('cola', 0xFFDC596B),
-                  listItem('coffee', 0xFF78C29E),
-                  listItem('burrito', 0xFFBFE3A4),
+                  listItem('cola', 0xFFDC596B, context),
+                  listItem('coffee', 0xFF78C29E, context),
+                  listItem('burrito', 0xFFBFE3A4, context),
                 ],
               ),
-            ),
-            SizedBox(height: 8),
-            MaterialButton(
-              child: Text('Go to products'),
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, '/products'),
-            ),
-            MaterialButton(
-              child: Text('Go to menu'),
-              onPressed: () => Navigator.pushReplacementNamed(context, '/menu'),
-            ),
-            MaterialButton(
-              child: Text('Go to history'),
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, '/history'),
-            ),
-            MaterialButton(
-              child: Text('Go to product'),
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, '/product'),
             ),
           ],
         ),
@@ -280,10 +260,13 @@ class Profile extends StatelessWidget {
     );
   }
 
-  listItem(String asset, int color) {
+  listItem(String asset, int color, BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
-      child: Image.asset('assets/' + asset + '.png'),
+      child: InkWell(
+        onTap: () => Navigator.pushNamed(context, '/product'),
+        child: Image.asset('assets/' + asset + '.png'),
+      ),
       decoration: BoxDecoration(
         color: Color(color),
         borderRadius: BorderRadius.all(
