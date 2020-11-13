@@ -56,6 +56,7 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
   final String id;
+
   _ProductScreenState(this.id);
 
   Future<Product> futureProduct;
@@ -203,7 +204,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                             ),
                                           ),
                                           Text(
-                                            'C',
+                                            '${getGrade(snapshot.data.score)}',
                                             style: TextStyle(
                                                 color: Color(0xFFDC596B),
                                                 fontSize: 28,
@@ -394,5 +395,21 @@ class _ProductScreenState extends State<ProductScreen> {
         ),
       ),
     );
+  }
+
+  String getGrade(int score) {
+    return score >= 30
+        ? 'A'
+        : score >= 25
+            ? 'B'
+            : score >= 20
+                ? 'C'
+                : score >= 15
+                    ? 'D'
+                    : score >= 10
+                        ? 'E'
+                        : score >= 5
+                            ? 'F'
+                            : 'G';
   }
 }
