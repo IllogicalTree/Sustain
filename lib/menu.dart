@@ -44,12 +44,13 @@ class Menu extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  menuItem('find a product', 'search-icon', context, ''),
+                  menuItem('find a product', 'search-icon', context, 'search'),
                   menuItem('our project', 'about-icon', context, 'about'),
-                  menuItem('leaderboards', 'trophy-icon', context, ''),
-                  menuItem('news', 'news-icon', context, ''),
+                  menuItem(
+                      'leaderboards', 'trophy-icon', context, 'leaderboard'),
+                  menuItem('news', 'news-icon', context, 'news'),
                   menuItem('history', 'history-icon', context, 'history'),
-                  menuItem('settings', 'settings-icon', context, ''),
+                  menuItem('settings', 'settings-icon', context, 'settings'),
                 ],
               ),
             ),

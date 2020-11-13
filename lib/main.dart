@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:sustain/history.dart';
+import 'package:sustain/leaderboard.dart';
 import 'package:sustain/login.dart';
 import 'package:sustain/menu.dart';
+import 'package:sustain/news.dart';
 import 'package:sustain/product.dart';
 import 'package:sustain/profile.dart';
 import 'package:sustain/register.dart';
 import 'package:sustain/about.dart';
+import 'package:sustain/search.dart';
+import 'package:sustain/settings.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +34,10 @@ class MyApp extends StatelessWidget {
         '/history': (context) => History(),
         '/product': (context) => Product(),
         '/about': (context) => About(),
+        '/leaderboard': (context) => Leaderboard(),
+        '/news': (context) => News(),
+        '/search': (context) => Search(),
+        '/settings': (context) => Settings(),
       },
     );
   }
