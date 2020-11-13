@@ -24,7 +24,10 @@ class Profile extends StatelessWidget {
                       children: [
                         Image.asset('assets/logo.png'),
                         Spacer(),
-                        Image.asset('assets/menu-icon.png')
+                        InkWell(
+                          child: Image.asset('assets/menu-icon.png'),
+                          onTap: () => Navigator.pushNamed(context, '/menu'),
+                        ),
                       ],
                     ),
                   ),
@@ -59,21 +62,112 @@ class Profile extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    '456',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 70,
-                      fontWeight: FontWeight.bold,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              'RATING',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                'C',
+                                style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 28,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(
+                                left: 10, right: 10, top: 20, bottom: 0),
+                            child: Text(
+                              'SCORE',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            '456',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 60,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              'LEVEL',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          Image.asset('assets/tree-icon.png'),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              child: Column(
+                children: [
+                  Text('SCAN',
+                      style: TextStyle(color: Colors.white, fontSize: 16)),
+                  Container(
+                    height: 80,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/barcode.png'),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Container(
               padding: EdgeInsets.all(8),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Column(
                     children: [
@@ -114,16 +208,6 @@ class Profile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Spacer(),
-                  Text(
-                    '6',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 34,
-                    ),
-                  ),
-                  Icon(Icons.nature, color: Colors.white, size: 40)
                 ],
               ),
             ),
@@ -144,21 +228,6 @@ class Profile extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            rowHeading('yesterday'),
-            SizedBox(height: 8),
-            Container(
-              height: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  listItem('wine', 0xFFEE8591),
-                  listItem('pizza', 0xFFFDD6A0),
-                  listItem('boba', 0xFFCDA37F),
-                ],
-              ),
-            ),
-            SizedBox(height: 8),
-            rowHeading('tuesday 10/11/20'),
             MaterialButton(
               child: Text('Go to products'),
               onPressed: () =>
