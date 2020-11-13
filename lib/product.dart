@@ -20,7 +20,9 @@ class Product extends StatelessWidget {
               padding: EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Row(
                 children: [
-                  Image.asset('assets/close-icon.png'),
+                  InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: Image.asset('assets/close-icon.png')),
                 ],
               ),
             ),

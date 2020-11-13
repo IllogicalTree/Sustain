@@ -51,9 +51,9 @@ class History extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        listItem('cola', 0xFFDC596B),
-                        listItem('coffee', 0xFF78C29E),
-                        listItem('burrito', 0xFFBFE3A4),
+                        listItem('cola', 0xFFDC596B, context),
+                        listItem('coffee', 0xFF78C29E, context),
+                        listItem('burrito', 0xFFBFE3A4, context),
                       ],
                     ),
                   ),
@@ -65,9 +65,9 @@ class History extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        listItem('wine', 0xFFEE8591),
-                        listItem('pizza', 0xFFFDD6A0),
-                        listItem('boba', 0xFFCDA37F),
+                        listItem('wine', 0xFFEE8591, context),
+                        listItem('pizza', 0xFFFDD6A0, context),
+                        listItem('boba', 0xFFCDA37F, context),
                       ],
                     ),
                   ),
@@ -79,9 +79,9 @@ class History extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        listItem('tea', 0xFFDDB89A),
-                        listItem('chocolate', 0xFFDD5C6D),
-                        listItem('water', 0xFFC7CDD8),
+                        listItem('tea', 0xFFDDB89A, context),
+                        listItem('chocolate', 0xFFDD5C6D, context),
+                        listItem('water', 0xFFC7CDD8, context),
                       ],
                     ),
                   ),
@@ -126,10 +126,12 @@ class History extends StatelessWidget {
     );
   }
 
-  listItem(String asset, int color) {
+  listItem(String asset, int color, BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
-      child: Image.asset('assets/' + asset + '.png'),
+      child: InkWell(
+          onTap: () => Navigator.pushNamed(context, '/product'),
+          child: Image.asset('assets/' + asset + '.png')),
       decoration: BoxDecoration(
         color: Color(color),
         borderRadius: BorderRadius.all(

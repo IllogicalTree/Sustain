@@ -31,7 +31,7 @@ class About extends StatelessWidget {
                   Spacer(),
                   InkWell(
                     child: Image.asset('assets/menu-icon.png'),
-                    onTap: () => Navigator.pushNamed(context, '/menu'),
+                    onTap: () => Navigator.popAndPushNamed(context, '/menu'),
                   ),
                 ],
               ),
