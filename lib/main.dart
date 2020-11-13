@@ -5,6 +5,7 @@ import 'package:sustain/menu.dart';
 import 'package:sustain/product.dart';
 import 'package:sustain/profile.dart';
 import 'package:sustain/register.dart';
+import 'package:sustain/about.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         '/profile': (context) => Profile(),
         '/menu': (context) => Menu(),
         '/history': (context) => History(),
-        '/product': (context) => Product()
+        '/product': (context) => Product(),
+        '/about': (context) => About(),
       },
     );
   }
