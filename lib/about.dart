@@ -19,15 +19,6 @@ class About extends StatelessWidget {
               padding: EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Row(
                 children: [
-                  Image.asset('assets/logo.png'),
-                  Spacer(),
-                  Text(
-                    'About sustain',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
-                  ),
                   Spacer(),
                   InkWell(
                     child: Image.asset('assets/menu-icon.png'),
@@ -36,12 +27,44 @@ class About extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
+            SizedBox(height: 20),
+            Container(
+              child: Image.asset('assets/logo.png'),
+            ),
+            SizedBox(height: 30),
             Text(
-              'Sustain is ...',
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              'OUR PROJECT',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'This project commenced on the 9th of November 2020 and was developed for the IBM Call for Code Challenge, which required a team of 5 individuals to propose an idea that could provide a solution to the energy sustainability issues impacting the entire world.',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'The team comprising of Davis Ansons, Jordan Newlands, Alexander Wedekind, Marcin Waskowiak, and Slawomir Szakalinis had only one week to do this, and this is the result!',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
             ),
             Spacer(),
+            Container(
+              height: 220,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/recycle-bins.png'),
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ),
           ],
         ),
       ),
