@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:sustain/product.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -8,8 +9,6 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  String _scanBarcode = 'Unknown';
-
   @override
   void initState() {
     super.initState();
@@ -21,7 +20,6 @@ class _ProfileState extends State<Profile> {
     try {
       barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           "#ff6666", "Cancel", true, ScanMode.BARCODE);
-      print(barcodeScanRes);
     } on PlatformException {
       barcodeScanRes = 'Failed to get platform version.';
     }
@@ -31,9 +29,12 @@ class _ProfileState extends State<Profile> {
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
-    setState(() {
-      _scanBarcode = barcodeScanRes;
-    });
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ProductScreen(id: barcodeScanRes),
+      ),
+    );
   }
 
   @override
@@ -199,7 +200,6 @@ class _ProfileState extends State<Profile> {
                           image: AssetImage('assets/barcode.png'),
                         ),
                       ),
-                      child: Text('$_scanBarcode'),
                     ),
                   ),
                 ],
@@ -263,9 +263,14 @@ class _ProfileState extends State<Profile> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  listItem('cola', 0xFFDC596B, context),
-                  listItem('coffee', 0xFF78C29E, context),
-                  listItem('burrito', 0xFFBFE3A4, context),
+                  listItem(
+                    'cola',
+                    0xFFDC596B,
+                    context,
+                    '5000112630633',
+                  ),
+                  listItem('coffee', 0xFF78C29E, context, '2'),
+                  listItem('burrito', 0xFFBFE3A4, context, '3'),
                 ],
               ),
             ),
@@ -302,11 +307,15 @@ class _ProfileState extends State<Profile> {
     );
   }
 
-  listItem(String asset, int color, BuildContext context) {
+  listItem(String asset, int color, BuildContext context, String id) {
     return Container(
       padding: EdgeInsets.all(5),
       child: InkWell(
-        onTap: () => Navigator.pushNamed(context, '/product'),
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductScreen(id: id),
+            )),
         child: Image.asset('assets/' + asset + '.png'),
       ),
       decoration: BoxDecoration(

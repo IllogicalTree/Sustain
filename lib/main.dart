@@ -33,7 +33,17 @@ class MyApp extends StatelessWidget {
         '/profile': (context) => Profile(),
         '/menu': (context) => Menu(),
         '/history': (context) => History(),
-        '/product': (context) => Product(),
+        /*
+        '/product': (context) => Product(
+              '5000112630633',
+              'coke can',
+              "Coca-Cola Classic is the world's favourite soft drink and has been enjoyed since 1886.",
+              'METAL - WIDELY RECYCLED',
+              0xFFDC596B,
+              'https://sustain-cos-standard-qpn.s3.eu-gb.cloud-object-storage.appdomain.cloud/Cola%20Can.png',
+              21,
+            ),
+            */
         '/about': (context) => About(),
         '/leaderboard': (context) => Leaderboard(),
         '/news': (context) => News(),
