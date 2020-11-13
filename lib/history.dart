@@ -21,7 +21,9 @@ class History extends StatelessWidget {
                 children: [
                   Image.asset('assets/logo.png'),
                   Spacer(),
-                  Image.asset('assets/menu-icon.png')
+                  InkWell(
+                      onTap: () => Navigator.pushNamed(context, '/menu'),
+                      child: Image.asset('assets/menu-icon.png'))
                 ],
               ),
             ),

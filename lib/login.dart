@@ -90,14 +90,12 @@ class Login extends StatelessWidget {
                 child: Center(
                   child: Text('START!'),
                 ),
-                onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/profile'),
+                onPressed: () => Navigator.pushNamed(context, '/profile'),
               ),
             ),
             Container(
               child: FlatButton(
-                onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/register'),
+                onPressed: () => Navigator.pushNamed(context, '/register'),
                 child: Text(
                   'Create an Account',
                   style: TextStyle(

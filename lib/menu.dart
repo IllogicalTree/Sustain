@@ -20,9 +20,13 @@ class Menu extends StatelessWidget {
               padding: EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Row(
                 children: [
-                  Image.asset('assets/question-icon.png'),
+                  InkWell(
+                      onTap: () => Navigator.pushNamed(context, '/about'),
+                      child: Image.asset('assets/question-icon.png')),
                   Spacer(),
-                  Image.asset('assets/close-icon.png')
+                  InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: Image.asset('assets/close-icon.png'))
                 ],
               ),
             ),
@@ -40,12 +44,12 @@ class Menu extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  menuItem('find a product', 'search-icon'),
-                  menuItem('our project', 'about-icon', 'menu'),
-                  menuItem('leaderboards', 'trophy-icon', 'menu'),
-                  menuItem('news', 'news-icon', 'menu'),
-                  menuItem('history', 'history-icon', 'menu'),
-                  menuItem('settings', 'settings-icon', 'menu'),
+                  menuItem('find a product', 'search-icon', context, ''),
+                  menuItem('our project', 'about-icon', context, 'about'),
+                  menuItem('leaderboards', 'trophy-icon', context, ''),
+                  menuItem('news', 'news-icon', context, ''),
+                  menuItem('history', 'history-icon', context, 'history'),
+                  menuItem('settings', 'settings-icon', context, ''),
                 ],
               ),
             ),
@@ -65,7 +69,7 @@ class Menu extends StatelessWidget {
     );
   }
 
-  menuItem(String title, String icon, [String route]) {
+  menuItem(String title, String icon, BuildContext context, [String route]) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 100),
       child: Row(
@@ -78,13 +82,21 @@ class Menu extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    title.toUpperCase(),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
+                  child: InkWell(
+                    onTap: () => {
+                      if (route != '')
+                        {
+                          Navigator.pushReplacementNamed(context, '/' + route),
+                        }
+                    },
+                    child: Text(
+                      title.toUpperCase(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
                 Divider(
