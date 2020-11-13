@@ -91,7 +91,7 @@ class Login extends StatelessWidget {
                   child: Text('START!'),
                 ),
                 onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/products'),
+                    Navigator.pushReplacementNamed(context, '/profile'),
               ),
             ),
             Container(

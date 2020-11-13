@@ -17,8 +17,16 @@ class Profile extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 60,
+                  Container(
+                    height: 58,
+                    padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/logo.png'),
+                        Spacer(),
+                        Image.asset('assets/menu-icon.png')
+                      ],
+                    ),
                   ),
                   Text(
                     'SUMMARY',

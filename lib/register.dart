@@ -111,7 +111,7 @@ class Register extends StatelessWidget {
                   child: Text('REGISTER!'),
                 ),
                 onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/products'),
+                    Navigator.pushReplacementNamed(context, '/profile'),
               ),
             ),
             Container(

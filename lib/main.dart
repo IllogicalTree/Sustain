@@ -3,7 +3,6 @@ import 'package:sustain/history.dart';
 import 'package:sustain/login.dart';
 import 'package:sustain/menu.dart';
 import 'package:sustain/product.dart';
-import 'package:sustain/products.dart';
 import 'package:sustain/profile.dart';
 import 'package:sustain/register.dart';
 
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
         '/': (context) => Register(),
         '/login': (context) => Login(),
         '/register': (context) => Register(),
-        '/products': (context) => Products(),
         '/profile': (context) => Profile(),
         '/menu': (context) => Menu(),
         '/history': (context) => History(),
