@@ -91,7 +91,7 @@ class _ProfileState extends State<Profile> {
                     height: 10,
                   ),
                   Text(
-                    'JORDAN NEWLANDS',
+                    'TEAM SUSTAIN',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
