@@ -73,6 +73,10 @@ flutter test
 > +1: All tests passed!
 ```
 
+The barcode scanning feature can be tested against our sample product sheet.
+
+![Product sheet](visuals/product-sheet.png)
+
 ## Live demo
 
 Coming soon!
