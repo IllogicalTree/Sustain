@@ -78,8 +78,9 @@ The barcode scanning feature can be tested against our sample product sheet.
 ![Product sheet](visuals/product-sheet.png)
 
 ## Live demo
+An early access release of our app is now live on the playstore, check it out [here](https://play.google.com/store/apps/details?id=com.newlandsjordan.sustain)!
 
-Coming soon!
+Please note that due to the nature of the release there may be small bugs still lurking.
 
 ## Built with
 
